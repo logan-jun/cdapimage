@@ -1,0 +1,43 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Field Decompressor",
+  "configuration-groups": [
+    {
+      "label": "Decompressor",
+      "properties": [
+        {
+          "widget-type": "keyvalue-dropdown",
+          "label": "Decompress Fields",
+          "name": "decompressor",
+          "widget-attributes": {
+            "showDelimiter": "false",
+            "dropdownOptions": [
+              "SNAPPY",
+              "ZIP",
+              "GZIP",
+              "NONE"
+            ],
+            "key-placeholder": "Field Name"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "label": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "bytes",
+          "string"
+        ],
+        "schema-default-type": "bytes",
+        "property-watch": "format"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Record Duplicator",
+  "configuration-groups": [
+    {
+      "label": "Clone Rows",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Copies of record",
+          "name": "copies",
+          "widget-attributes": {
+            "width": "large",
+            "default": "1"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}

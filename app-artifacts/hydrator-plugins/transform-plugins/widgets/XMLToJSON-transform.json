@@ -1,0 +1,49 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name" : "XML to Json String",
+  "configuration-groups": [
+    {
+      "label": "Field Mapping",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Input Field",
+          "name": "inputField",
+          "widget-attributes": {
+            "default": "body"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Output Field",
+          "name": "outputField",
+          "widget-attributes": {
+            "default": "json_body"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "label": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "boolean",
+          "int",
+          "long",
+          "float",
+          "double",
+          "bytes",
+          "string",
+          "map<string, string>"
+        ],
+        "schema-default-type": "string"
+      }
+    }
+  ]
+}

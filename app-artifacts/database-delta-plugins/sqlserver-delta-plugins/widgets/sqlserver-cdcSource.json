@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Microsoft SQLServer",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "name": "host",
+          "label": "Host",
+          "widget-type": "textbox"
+        },
+        {
+          "name": "port",
+          "label": "Port",
+          "widget-type": "textbox",
+          "widget-attributes": {
+            "default": "1433"
+          }
+        },
+        {
+          "name": "jdbcPluginName",
+          "label": "JDBC Plugin Name",
+          "widget-type": "plugin-list",
+          "widget-attributes": {
+            "plugin-type": "jdbc"
+          }
+        },
+        {
+          "name": "database",
+          "label": "Database Name",
+          "widget-type": "textbox"
+        }
+      ]
+    },
+    {
+      "label": "Credentials",
+      "properties": [
+        {
+          "name": "user",
+          "label": "User",
+          "widget-type": "textbox"
+        },
+        {
+          "name": "password",
+          "label": "Password",
+          "widget-type": "password"
+        }
+      ]
+    },
+    {
+      "label": "Advanced",
+      "properties": [
+        {
+          "name": "serverTimezone",
+          "label": "Server Timezone",
+          "widget-type": "textbox",
+          "widget-attributes": {
+            "default": "UTC"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}
+

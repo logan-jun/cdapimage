@@ -1,0 +1,74 @@
+{
+  "metadata": {
+    "spec-version": "1.5",
+    "label": "Group by Aggregator"
+  },
+  "display-name" : "Group By",
+  "configuration-groups": [
+    {
+      "label": "General",
+      "properties": [
+        {
+          "widget-type": "csv",
+          "label": "Group by fields",
+          "name": "groupByFields",
+          "widget-attributes": {
+            "delimiter": ",",
+            "value-placeholder": "Field Name"
+          },
+          "plugin-function": {
+            "method": "POST",
+            "widget": "outputSchema",
+            "output-property": "schema",
+            "plugin-method": "outputSchema",
+            "required-fields": ["groupByFields", "aggregates"],
+            "missing-required-fields-message": "'Group By Fields' & 'Aggregates' properties are required to fetch schema."
+          }
+        },
+        {
+          "widget-type": "function-dropdown-with-alias",
+          "label": "Aggregates",
+          "name": "aggregates",
+          "widget-attributes": {
+            "placeholders": {
+              "field": "field",
+              "alias": "alias"
+            },
+            "dropdownOptions": [
+              "Avg",
+              "Count",
+              "First",
+              "Last",
+              "Max",
+              "Min",
+              {
+                "label": "Standard Deviation",
+                "value": "Stddev"
+              },
+              "Sum",
+              "Variance",
+              {
+                "label": "Collect List",
+                "value": "CollectList"
+              },
+              {
+                "label": "Collect Set",
+                "value": "CollectSet"
+              },
+              {
+                "label": "Count Distinct",
+                "value": "CountDistinct"
+              }
+            ]
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Number of Partitions",
+          "name": "numPartitions"
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}

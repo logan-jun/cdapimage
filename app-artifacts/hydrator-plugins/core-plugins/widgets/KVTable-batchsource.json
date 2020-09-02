@@ -1,0 +1,42 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Key Value Dataset",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "widget-type": "dataset-selector",
+          "label": "Table Name",
+          "name": "name"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "widget-type": "non-editable-schema-editor",
+      "schema": {
+        "name": "etlSchemaBody",
+        "type": "record",
+        "fields": [
+          {
+            "name": "key",
+            "type": "bytes"
+          },
+          {
+            "name": "value",
+            "type": "bytes"
+          }
+        ]
+      }
+    }
+  ],
+  "jump-config": {
+    "datasets": [{
+      "ref-property-name": "name"
+    }]
+  }
+}

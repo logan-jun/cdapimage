@@ -1,0 +1,135 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name" : "BigQuery Multi Table",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Reference Name",
+          "name": "referenceName",
+          "widget-attributes" : {
+            "placeholder": "Name used to identify this sink for lineage"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Project ID",
+          "name": "project",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Dataset",
+          "name": "dataset",
+          "widget-attributes" : {
+            "placeholder": "Dataset the tables belong to"
+          }
+        },
+        {
+          "widget-type": "toggle",
+          "name": "truncateTable",
+          "label": "Truncate Table",
+          "widget-attributes": {
+            "default": "false",
+            "on": {
+              "value": "true",
+              "label": "True"
+            },
+            "off": {
+              "value": "false",
+              "label": "False"
+            }
+          }
+        }
+      ]
+    },
+    {
+      "label" : "Credentials",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Service Account File Path",
+          "name": "serviceFilePath",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        }
+      ]
+    },
+    {
+      "label" : "Advanced",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Temporary Bucket Name",
+          "name": "bucket",
+          "widget-attributes" : {
+            "placeholder": "Google Cloud Storage bucket for temporary data"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "GCS Upload Request Chunk Size",
+          "name": "gcsChunkSize",
+          "widget-attributes" : {
+            "placeholder": "GCS upload request chunk size in bytes"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Split Field",
+          "name": "splitField",
+          "widget-attributes": {
+            "placeholder": "Field used to determine which table to write to"
+          }
+        },
+        {
+          "widget-type": "radio-group",
+          "name": "allowSchemaRelaxation",
+          "label": "Update Table Schema",
+          "widget-attributes": {
+            "layout": "inline",
+            "default": "false",
+            "options": [
+              {
+                "id": "true",
+                "label": "True"
+              },
+              {
+                "id": "false",
+                "label": "False"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label": "Auto Create",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Location",
+          "name": "location",
+          "widget-attributes": {
+            "default": "US"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [],
+  "jump-config": {
+    "datasets": [
+      {
+        "ref-property-name": "referenceName"
+      }
+    ]
+  }
+}

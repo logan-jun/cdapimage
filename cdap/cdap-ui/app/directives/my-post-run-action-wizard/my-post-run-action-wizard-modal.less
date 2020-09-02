@@ -1,0 +1,78 @@
+/*
+ * Copyright © 2016 Cask Data, Inc.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not
+ * use this file except in compliance with the License. You may obtain a copy of
+ * the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+ * WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+ * License for the specific language governing permissions and limitations under
+ * the License.
+ */
+@import '../../styles/variables.less';
+
+.modal.cdap-modal {
+  &.post-run-actions-modal {
+    .modal-header {
+      > h4 {
+        margin-top: 10px;
+        padding-left: 10px;
+      }
+      a.btn {
+        background: transparent;
+        border: 1px solid transparent;
+        border-radius: 0;
+        background-clip: padding-box;
+        color: @cdap-header;
+        font-size: 18px;
+        outline: none;
+        padding: 0;
+        white-space: normal;
+        border-left: 1px solid #c9ccd6;
+        width: 60px;
+        height: 60px;
+        line-height: 60px;
+
+        &:hover {
+          background-color: @cdap-header;
+          border: 1px solid @cdap-header;
+          color: white;
+          background-clip: padding-box;
+        }
+      }
+    }
+  }
+}
+
+/*
+ * The max-height is 165 we don't set the height of the body element
+ * to be the same as html. We have an extra margin-bottom
+ * from very distant past. This should have been originally
+ * 100% - (65px + 60px) (height of modal - header + footer of postrunactions)
+ * but since the height of the modal doesn't take the height of the body
+ * where it is nested we need to subtract the extra 50px that we
+ * add for margin bottom for the body element.
+ */
+body.theme-cdap.state-hydrator-detail {
+  .modal.hydrator-modal.node-config-modal {
+    &.post-run-actions-modal {
+      .modal-dialog {
+        .modal-content {
+          .modal-body {
+            height: unset;
+            max-height: ~"calc(100% - 120px)";
+            overflow-y: auto;
+          }
+          .modal-footer {
+            padding: 10px;
+            border-top: 1px solid #cccccc;
+          }
+        }
+      }
+    }
+  }
+}

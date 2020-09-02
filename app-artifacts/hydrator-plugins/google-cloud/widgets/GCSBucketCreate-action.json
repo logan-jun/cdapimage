@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name" : "GCS Create",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Project ID",
+          "name": "project",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        },
+        {
+          "name": "paths",
+          "widget-type": "csv",
+          "label" : "Objects to Create",
+          "widget-attributes": {
+            "value-placeholder": "Object to create"
+          }
+        },
+        {
+          "widget-type": "radio-group",
+          "name" : "failIfExists",
+          "label" : "Fail if Object Exists",
+          "widget-attributes": {
+            "layout": "inline",
+            "default": "true",
+            "options": [
+              {
+                "id": "true",
+                "label": "True"
+              },
+              {
+                "id": "false",
+                "label": "False"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "label" : "Credentials",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Service Account File Path",
+          "name": "serviceFilePath",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        }
+      ]
+    },
+    {
+      "label": "Auto Create",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Location",
+          "name": "location",
+          "widget-attributes": {
+            "default": "us"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}

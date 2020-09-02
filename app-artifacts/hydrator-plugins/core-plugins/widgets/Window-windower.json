@@ -1,0 +1,24 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name" : "Windower",
+  "configuration-groups": [
+    {
+      "label": "Window",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Width",
+          "name": "width"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Slide Interval",
+          "name": "slideInterval"
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}

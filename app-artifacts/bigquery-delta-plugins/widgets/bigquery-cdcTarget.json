@@ -1,0 +1,75 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "BigQuery",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "name": "project",
+          "label": "Project ID",
+          "widget-type": "textbox",
+          "widget-attributes": {
+            "default": "auto-detect"
+          }
+        },
+        {
+          "name": "stagingBucket",
+          "label": "Staging Bucket",
+          "widget-type": "textbox"
+        }
+      ]
+    },
+    {
+      "label": "Credentials",
+      "properties": [
+        {
+          "name": "serviceAccountKey",
+          "label": "Service Account Key",
+          "widget-type": "securekey-textarea"
+        }
+      ]
+    },
+    {
+      "label" : "Advanced",
+      "properties" : [
+        {
+          "name": "loadInterval",
+          "label": "Load Interval (seconds)",
+          "widget-type": "textbox",
+          "widget-attributes": {
+            "default": "90"
+          }
+        },
+        {
+          "name": "stagingTablePrefix",
+          "label": "Staging Table Prefix",
+          "widget-type": "textbox",
+          "widget-attributes": {
+            "default": "_staging_"
+          }
+        },
+        {
+          "name": "requireManualDrops",
+          "label": "Require Manual Drop Intervention",
+          "widget-type": "toggle",
+          "widget-attributes": {
+            "default": "false",
+            "on": {
+              "value": "true",
+              "label": "True"
+            },
+            "off": {
+              "value": "false",
+              "label": "False"
+            }
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}
+

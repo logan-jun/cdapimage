@@ -1,0 +1,141 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name" : "BigQuery",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "widget-type": "textbox",
+          "label": "Reference Name",
+          "name": "referenceName",
+          "widget-attributes" : {
+            "placeholder": "Name used to identify this source for lineage"
+          }
+        },
+        {
+          "widget-type": "connection-browser",
+          "widget-category": "plugin",
+          "widget-attributes": {
+            "connectionType": "BIGQUERY",
+            "label": "Browse"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Project ID",
+          "name": "project",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Dataset Project ID",
+          "name": "datasetProject",
+          "widget-attributes" : {
+            "placeholder": "Project the dataset belongs to, if different from the Project ID."
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Dataset",
+          "name": "dataset",
+          "widget-attributes" : {
+            "placeholder": "Dataset the table belongs to"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Table",
+          "name": "table",
+          "widget-attributes" : {
+            "placeholder": "Table to read from"
+          },
+          "plugin-function": {
+            "label": "Get Schema",
+            "widget": "outputSchema",
+            "output-property": "schema",
+            "omit-properties": [
+              {
+                "name": "schema"
+              }
+            ]
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Partition Start Date",
+          "name": "partitionFrom",
+          "widget-attributes" : {
+            "placeholder": "Partition start date in format yyyy-MM-dd"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Partition End Date",
+          "name": "partitionTo",
+          "widget-attributes" : {
+            "placeholder": "Partition end date in format yyyy-MM-dd"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Filter",
+          "name": "filter",
+          "widget-attributes" : {
+            "placeholder": ""
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Temporary Bucket Name",
+          "name": "bucket",
+          "widget-attributes" : {
+            "placeholder": "Google Cloud Storage bucket for temporary data"
+          }
+        }
+      ]
+    },
+    {
+      "label" : "Credentials",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Service Account File Path",
+          "name": "serviceFilePath",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "label": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "boolean",
+          "long",
+          "double",
+          "bytes",
+          "string",
+          "array"
+        ],
+        "schema-default-type": "string"
+      }
+    }
+  ],
+  "jump-config": {
+    "datasets": [
+      {
+        "ref-property-name": "referenceName"
+      }
+    ]
+  }
+}

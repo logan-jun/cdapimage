@@ -1,0 +1,45 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Field Decoder",
+  "configuration-groups": [
+    {
+      "label": "Decoder",
+      "properties": [
+        {
+          "widget-type": "keyvalue-dropdown",
+          "label": "Decode Fields",
+          "name": "decode",
+          "widget-attributes": {
+            "showDelimiter": "false",
+            "dropdownOptions": [
+              "BASE32",
+              "BASE64",
+              "STRING_BASE32",
+              "STRING_BASE64",
+              "HEX",
+              "NONE"
+            ],
+            "key-placeholder": "Field Name"
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "label": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "string",
+          "bytes"
+        ],
+        "schema-default-type": "string",
+        "property-watch": "format"
+      }
+    }
+  ]
+}

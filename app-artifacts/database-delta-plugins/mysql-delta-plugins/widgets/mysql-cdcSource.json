@@ -1,0 +1,69 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "MySQL",
+  "configuration-groups": [
+    {
+      "label": "Database Location",
+      "properties": [
+        {
+          "name": "host",
+          "label": "Host",
+          "widget-type": "textbox"
+        },
+        {
+          "name": "port",
+          "label": "Port",
+          "widget-type": "textbox",
+          "widget-attributes": {
+            "default": "3306"
+          }
+        },
+        {
+          "name": "consumerID",
+          "label": "Consumer ID",
+          "widget-type": "textbox"
+        },
+        {
+          "name": "serverTimezone",
+          "label": "Server Timezone",
+          "widget-type": "textbox",
+          "widget-attributes": {
+            "default": "UTC"
+          }
+        },
+        {
+          "name": "jdbcPluginName",
+          "label": "JDBC Plugin Name",
+          "widget-type": "plugin-list",
+          "widget-attributes": {
+            "plugin-type": "jdbc"
+          }
+        },
+        {
+          "name": "database",
+          "label": "Database Name",
+          "widget-type": "textbox"
+        }
+      ]
+    },
+    {
+      "label": "User Account",
+      "properties": [
+        {
+          "name": "user",
+          "label": "User",
+          "widget-type": "textbox"
+        },
+        {
+          "name": "password",
+          "label": "Password",
+          "widget-type": "password"
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}
+

@@ -1,0 +1,102 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Pub/Sub",
+  "configuration-groups": [
+    {
+      "label" : "Basic",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Reference Name",
+          "name": "referenceName",
+          "widget-attributes" : {
+            "placeholder": "Name used to identify this sink for lineage"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Project ID",
+          "name": "project",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "PubSub topic",
+          "name": "topic",
+          "widget-attributes" : {
+            "placeholder": "Topic to publish to"
+          }
+        }
+      ]
+    },
+    {
+      "label" : "Credentials",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Service Account File Path",
+          "name": "serviceFilePath",
+          "widget-attributes" : {
+            "default": "auto-detect"
+          }
+        }
+      ]
+    },
+    {
+      "label" : "Advanced",
+      "properties" : [
+        {
+          "widget-type": "textbox",
+          "label": "Maximum Batch Count",
+          "name": "messageCountBatchSize",
+          "widget-attributes" : {
+            "default": "100"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Maximum Batch Size (KB)",
+          "name": "requestThresholdKB",
+          "widget-attributes" : {
+            "default": "1"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Publish Delay Threshold (ms)",
+          "name": "publishDelayThresholdMillis",
+          "widget-attributes" : {
+            "default": "1"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Retry Timeout (seconds)",
+          "name": "retryTimeoutSeconds",
+          "widget-attributes" : {
+            "default": "30"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Error Threshold",
+          "name": "errorThreshold",
+          "widget-attributes" : {
+            "default": "0"
+          }
+        }
+      ]
+    }
+  ],
+  "jump-config": {
+    "datasets": [
+      {
+        "ref-property-name": "referenceName"
+      }
+    ]
+  }
+}

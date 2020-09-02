@@ -1,0 +1,57 @@
+{
+  "metadata": {
+    "spec-version": "1.5"
+  },
+  "display-name": "Parquet Snapshot Dataset",
+  "configuration-groups": [
+    {
+      "label": "Basic",
+      "properties": [
+        {
+          "widget-type": "dataset-selector",
+          "label": "Dataset Name",
+          "name": "name"
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Snapshot Base Path",
+          "name": "basePath"
+        }
+      ]
+    },
+    {
+      "label": "Advanced",
+      "properties": [
+        {
+          "widget-type": "json-editor",
+          "label": "FileSet Properties",
+          "name": "fileProperties"
+        }
+      ]
+    }
+  ],
+  "outputs": [
+    {
+      "name": "schema",
+      "widget-type": "schema",
+      "widget-attributes": {
+        "schema-types": [
+          "boolean",
+          "int",
+          "long",
+          "float",
+          "double",
+          "bytes",
+          "string",
+          "map<string, string>"
+        ],
+        "schema-default-type": "string"
+      }
+    }
+  ],
+  "jump-config": {
+    "datasets": [{
+      "ref-property-name": "name"
+    }]
+  }
+}
