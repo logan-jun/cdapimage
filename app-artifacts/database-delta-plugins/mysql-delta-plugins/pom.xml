@@ -79,6 +79,7 @@
         <artifactId>docker-maven-plugin</artifactId>
         <version>0.33.0</version>
         <configuration>
+          <dockerHost>tcp://172.31.32.1:2375</dockerHost>
           <images>
             <image>
               <name>${mysql.image}</name>
